@@ -57,3 +57,5 @@ gem 'pry-rails', :group => :development
 
 gem 'haml'
 gem 'haml-rails'
+
+gem "font-awesome-rails"

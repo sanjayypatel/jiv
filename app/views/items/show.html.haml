@@ -1,0 +1,21 @@
+.page-header= "#{@item.title}, #{@item.media_type}"
+.item-panel
+  .row
+    .col-sm-2
+      .panel-checkbox
+        -if @item.finished?
+          = fa_icon "check-square-o"
+        - else
+          = fa_icon "square-o"
+    .col-sm-8
+      .panel-title= @item.title
+      .panel-text= @item.media_type
+      .panel-text= @item.finished_on_to_s
+    .col-sm-1
+    .col-sm-1
+      .panel-link= link_to 'Edit', edit_item_path(@item)
+  .row
+    .col-sm-12
+      .panel-notes
+        .italic-text= "Notes:"
+        = @item.notes

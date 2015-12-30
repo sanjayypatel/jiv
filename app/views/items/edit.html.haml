@@ -1,0 +1,20 @@
+.page-header Edit Item
+= form_for @item do |f|
+  .form-group
+    = f.label :title, class: 'form-label'
+    = f.text_field :title, class: 'form-control'
+  .form-group
+    = f.label :media_type, 'Type', class: 'form-label'
+    = f.text_field :media_type, class: 'form-control'
+  .form-group
+    = f.label :finished_on, 'Date Completed', class: 'form-label'
+    = f.date_field :finished_on, class: 'form-control'
+    .checkbox
+      = f.label :finished do
+        = f.check_box :finished
+        Finished?
+  .form-group
+    = f.label :notes, class: 'form-label'
+    = f.text_area :notes, rows: 5, class: 'form-control'
+  .form-group
+    = f.submit 'Save', class: 'btn btn-lg btn-success'
