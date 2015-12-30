@@ -49,8 +49,11 @@ group :development, :test do
   gem 'spring'
 end
 
-gem 'bootstrap-sass'
+gem 'bootstrap-sass', '~> 3.3.6'
 
 gem 'figaro', '1.0'
 
 gem 'pry-rails', :group => :development
+
+gem 'haml'
+gem 'haml-rails'
