@@ -16,22 +16,35 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
+@import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
 
 /*$background-color: #0B1F38;*/
-$background-color: white;
+$background-color: black;
+$text-color: white;
+$site-font: 'Anonymous Pro', sans-serif;
 
 body {
+  font-family: $site-font;
   background: $background-color;
-  color: black;
+  color: $text-color;
+  nav {
+    padding-right: 0.5em;
+    float: right;
+    font-size: 2em;
+    text-align: right;
+    list-style-type: none;
+  }
 }
 a, a:hover {
-  color: black;
+  color: $text-color;
 }
 .container {
   background: $background-color;
 }
 header {
+  padding-left: 0.25em;
   font-size: 5em;
+  float: left;
 }
 
 .page-header{
@@ -42,14 +55,13 @@ header {
 }
 
 .item-panel{
-  color: white;
+  color: $text-color;
   background: #18427a;
   padding: 0.5em;
-  margin: 0.5em 0;
+  margin: 1em 0;
   width: 100%;
   text-align: center;
   vertical-align: middle;
-  box-shadow: 2px 2px 5px grey;
   a, a:hover {
     color: white;
   }
@@ -74,16 +86,12 @@ header {
 }
 .panel-link {
   font-size: 2em;
-  text-align: right;
-  margin-right: 0.25em;
 }
 .italic-text {
   font-style: italic;
 }
 .panel-checkbox {
   font-size: 3em;
-  text-align: left;
-  margin-left: 0.25em;
 }
 
 .form-label {
