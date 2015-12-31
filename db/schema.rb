@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151231055625) do
+ActiveRecord::Schema.define(version: 20151231062932) do
 
   create_table "items", force: :cascade do |t|
     t.string   "media_type"
@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20151231055625) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.string   "title"
-    t.text     "notes"
+    t.text     "blurb"
     t.boolean  "finished"
     t.integer  "user_id"
   end

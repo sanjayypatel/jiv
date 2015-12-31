@@ -46,6 +46,13 @@ header {
   font-size: 5em;
   float: left;
 }
+.flash-notices {
+  width: 50%;
+  float: right;
+  font-size: 1em;
+  padding-left: 0.5em;
+}
+
 
 .page-header{
   font-size: 4em;
@@ -83,7 +90,7 @@ header {
 .panel-text {
   font-size: 2em;
 }
-.panel-notes {
+.panel-blurb {
   font-size: 1.5em;
   text-align: left;
   margin-left: 0.5em;

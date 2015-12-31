@@ -16,6 +16,4 @@
       .panel-link= link_to 'Edit', edit_item_path(@item)
   .row
     .col-sm-12
-      .panel-notes
-        .italic-text= "Notes:"
-        = @item.notes
+      .panel-blurb= @item.blurb

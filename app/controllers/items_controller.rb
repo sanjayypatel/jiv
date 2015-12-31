@@ -1,18 +1,26 @@
 class ItemsController < ApplicationController
   def index
-    @items = Item.all
+    if current_user
+      @items = current_user.items
+      authorize @items
+    else
+      @items = nil
+    end
   end
 
   def show
     @item = Item.find(params[:id])
+    authorize @item
   end
 
   def new
     @item = Item.new
+    authorize @item
   end
 
   def create
     @item = current_user.items.build(item_params)
+    authorize @item
     if @item.save
       flash[:notice] = "Saved!"
       redirect_to item_path(@item)
@@ -24,10 +32,12 @@ class ItemsController < ApplicationController
 
   def edit
     @item = Item.find(params[:id])
+    authorize @item
   end
 
   def update
     @item = Item.find(params[:id])
+    authorize @item
     if @item.update_attributes(item_params)
       flash[:notice] = "Saved!"
       redirect_to item_path(@item)
@@ -40,7 +50,7 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:media_type, :finished_on, :title, :notes, :finished)
+    params.require(:item).permit(:media_type, :finished_on, :title, :blurb, :finished)
   end
 
 end

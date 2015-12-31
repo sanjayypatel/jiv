@@ -61,3 +61,5 @@ gem 'haml-rails'
 gem "font-awesome-rails"
 
 gem 'omniauth-twitter'
+
+gem 'pundit'

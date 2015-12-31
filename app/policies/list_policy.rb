@@ -1,0 +1,27 @@
+class ListPolicy < ApplicationPolicy
+
+  def index?
+    true
+  end
+
+  def show?
+    return !record.private || record.user == user
+  end
+
+  def new?
+    user.present?
+  end
+
+  def create?
+    new?
+  end
+
+  def edit?
+    new?
+  end
+
+  def update?
+    new?
+  end
+
+end
