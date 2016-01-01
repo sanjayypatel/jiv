@@ -1,0 +1,12 @@
+.item-panel
+  .row
+    .col-sm-10
+      .panel-title= item.title
+      .panel-text= item.media_type
+      .panel-text= item.finished_on_to_s
+      .panel-text= item.user.name
+    .col-sm-2
+      = form_for Listing.new do |f|
+        = f.hidden_field :item_id, :value => item.id
+        = f.hidden_field :list_id, :value => list.id
+        = f.submit "Add", class: 'btn btn-success'

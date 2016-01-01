@@ -17,7 +17,7 @@ class ListPolicy < ApplicationPolicy
   end
 
   def edit?
-    new?
+    return user.present? && record.user == user
   end
 
   def update?

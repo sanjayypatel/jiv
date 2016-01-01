@@ -1,5 +1,7 @@
 class Item < ActiveRecord::Base
   belongs_to :user
+  has_many :listings
+  has_many :lists, :through => :listings
   ITEM_MEDIA_TYPES = ['Book', 'Movie', 'Show', 'Album', 'Game']
 
   def finished_on_to_s

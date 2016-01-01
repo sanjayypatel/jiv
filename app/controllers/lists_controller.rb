@@ -7,6 +7,11 @@ class ListsController < ApplicationController
   def show
     @list = List.find(params[:id])
     authorize @list
+    @items = @list.items
+    if params[:search] && current_user
+      query = params[:search]
+      @found_items = current_user.items.where("title like ?", "%#{query}%")
+    end
   end
 
   def new

@@ -21,9 +21,22 @@ class ItemsController < ApplicationController
   def create
     @item = current_user.items.build(item_params)
     authorize @item
+    puts params
     if @item.save
+      if params[:list_id]
+        @list = List.find(params[:list_id])
+        @listing = Listing.new(
+          list: @list,
+          item: @item
+        )
+        @listing.save
+      end
       flash[:notice] = "Saved!"
-      redirect_to item_path(@item)
+      if params[:list_id]
+        redirect_to list_path(params[:list_id])
+      else
+        redirect_to item_path(@item)
+      end
     else
       flash[:error] = "Hmm... something went wrong. Try again?"
       render :new
