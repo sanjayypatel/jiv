@@ -7,6 +7,9 @@
     = f.label :media_type, 'Type', class: 'form-label'
     = f.text_field :media_type, class: 'form-control'
   .form-group
+    = f.label :link, class: 'form-label'
+    = f.url_field :link, class: 'form-control'
+  .form-group
     = f.label :finished_on, 'Date Completed', class: 'form-label'
     = f.date_field :finished_on, class: 'form-control'
     .checkbox

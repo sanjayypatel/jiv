@@ -106,9 +106,15 @@ header {
 }
 
 .form-label {
+  font-size: 1.5em;
   font-style: italic;
 }
 .form-text {
   font-size: 2em;
   font-style: italic;
+}
+.form-control {
+  font-size: 2em;
+  border-radius: 0;
+  height: 45px;
 }

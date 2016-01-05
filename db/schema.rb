@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160101040842) do
+ActiveRecord::Schema.define(version: 20160105162829) do
 
   create_table "items", force: :cascade do |t|
     t.string   "media_type"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20160101040842) do
     t.text     "blurb"
     t.boolean  "finished"
     t.integer  "user_id"
+    t.string   "link"
   end
 
   add_index "items", ["user_id"], name: "index_items_on_user_id"

@@ -8,7 +8,7 @@
         - else
           = fa_icon "square-o"
     .col-sm-8
-      .panel-title= @item.title
+      .panel-title= title_as_link(@item)
       .panel-text= @item.media_type
       .panel-text= @item.finished_on_to_s
     .col-sm-1

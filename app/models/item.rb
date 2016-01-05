@@ -7,4 +7,5 @@ class Item < ActiveRecord::Base
   def finished_on_to_s
     self.finished_on ? self.finished_on.to_formatted_s(:long) : ""
   end
+
 end
