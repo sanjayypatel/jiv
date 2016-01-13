@@ -64,39 +64,73 @@ header {
 .page-text{
   font-size: 2em;
 }
+.wall {
+  @extend .row;
+}
 
+.brick-large {
+  @extend .col-md-6;
+}
+.brick-small {
+  @extend .col-md-3;
+}
 .item-panel{
-  color: $text-color;
-  background: #18427a;
   padding: 0.5em;
   margin: 1em 0;
-  width: 100%;
+  color: $text-color;
   text-align: center;
   vertical-align: middle;
+  width: 100%;
   a, a:hover {
     color: white;
   }
 }
-.item-panel:nth-child(3n+2) {
-  background: #5329C6;
+.item-panel-large{
+  height: 36em;
+  .panel-title {
+    font-size: 3em;
+    margin: 1em 0;
+  }
+  .panel-text {
+    font-size: 2.5em;
+  }
+  .panel-link {
+    font-size: 2em;
+  }
 }
-.item-panel:nth-child(3n+3) {
-  background: #008E79;
+.item-panel-small {
+  height: 17em;
+  .panel-title {
+    font-size: 2em;
+    margin: 0.5em 0;
+  }
+  .panel-text {
+    font-size: 1.5em;
+  }
+  .panel-link {
+    font-size: 1.5em;
+  }
+}
+.brick {
+  .item-panel {
+    background: #18427a;
+  }
+}
+.brick:nth-child(3n+2){
+  .item-panel {
+    background: #5329C6;
+  }
+}
+.brick:nth-child(3n+3) {
+  .item-panel{
+    background: #008E79;
+  }
 }
 
-.panel-title {
-  font-size: 2.5em;
-}
-.panel-text {
-  font-size: 2em;
-}
 .panel-blurb {
   font-size: 1.5em;
   text-align: left;
   margin-left: 0.5em;
-}
-.panel-link {
-  font-size: 2em;
 }
 .italic-text {
   font-style: italic;
