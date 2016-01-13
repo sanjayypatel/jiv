@@ -63,7 +63,7 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:media_type, :finished_on, :title, :blurb, :finished, :link)
+    params.require(:item).permit(:media_type, :finished_on, :title, :blurb, :finished, :link, :creator, :creator_link)
   end
 
 end

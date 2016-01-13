@@ -1,6 +1,10 @@
 class ListsController < ApplicationController
   def index
-    @lists = List.all_public
+    if current_user.present?
+      @lists = List.public_or_owned(current_user)
+    else
+      @lists = List.all_public
+    end
     authorize @lists
   end
 
@@ -10,7 +14,7 @@ class ListsController < ApplicationController
     @items = @list.items
     if params[:search] && current_user
       query = params[:search]
-      @found_items = current_user.items.where("title like ?", "%#{query}%")
+      @found_items = Item.where("title like ?", "%#{query}%").excluding(@items)
     end
   end
 

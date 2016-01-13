@@ -11,18 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160105162829) do
+ActiveRecord::Schema.define(version: 20160111192731) do
 
   create_table "items", force: :cascade do |t|
     t.string   "media_type"
     t.date     "finished_on"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
     t.string   "title"
     t.text     "blurb"
     t.boolean  "finished"
     t.integer  "user_id"
     t.string   "link"
+    t.string   "creator"
+    t.string   "creator_link"
   end
 
   add_index "items", ["user_id"], name: "index_items_on_user_id"

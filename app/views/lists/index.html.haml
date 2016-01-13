@@ -5,7 +5,9 @@
       .col-sm-2
       .col-sm-8
         .panel-title= list.title
-        .panel-text= link_to list.user.name, user_path(list.user)
+        .panel-text
+          List by
+          = link_to list.user.name, user_path(list.user)
       .col-sm-1
         .panel-link= link_to 'View', list_path(list)
       .col-sm-1

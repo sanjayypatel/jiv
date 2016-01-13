@@ -118,3 +118,14 @@ header {
   border-radius: 0;
   height: 45px;
 }
+.search-icon-button {
+  @extend .btn;
+  @extend .btn-default;
+  border-radius: 0;
+  height: 45px;
+}
+.add-to-list-button{
+  @extend .btn;
+  @extend .btn-default;
+  border-radius: 0;
+}
