@@ -1,0 +1,10 @@
+.brick.brick-small
+  .item-panel.item-panel-small
+    .panel-title= link_to list.title, list_path(list)
+    .panel-text= link_to "List by #{list.user.name}", user_path(list.user)
+    .panel-text= pluralize(list.items.count, "item")
+    .panel-link
+      = link_to 'View', list_path(list)
+      - if policy(list).edit?
+        |
+        = link_to 'Edit', edit_list_path(list)

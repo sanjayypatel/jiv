@@ -7,13 +7,15 @@
         = item.title
     .panel-text= item.media_type
     .panel-text= item.finished_on_to_s
-    .panel-text
-      - if  item.creator_link
-        = link_to item.creator. item.creator_link
-      - else
-        = item.creator
+    - if item.creator
+      .panel-text
+        - if  item.creator_link
+          = link_to "By #{item.creator}", item.creator_link
+        - else
+          = "By #{item.creator}"
     .panel-text= link_to "Listed by #{item.user.name}", user_path(item.user)
     .panel-link
       = link_to 'View', item_path(item)
       - if policy(item).edit?
+        |
         = link_to 'Edit', edit_item_path(item)

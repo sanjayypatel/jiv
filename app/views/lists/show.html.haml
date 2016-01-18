@@ -3,8 +3,12 @@
 .page-text
   = @list.blurb
 -if @items
-  - @items.each do |item|
-    = render partial: 'items/item', locals: {item: item}
+  .wall
+    - @items.each_with_index do |item, i|
+      - if i == 0
+        = render partial: 'items/brick_large', locals: {item: item}
+      - else
+        = render partial: 'items/brick_small', locals: {item: item}
 - if policy(@list).edit?
   .row
     .col-md-6

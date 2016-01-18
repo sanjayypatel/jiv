@@ -1,14 +1,9 @@
 .page-header Lists
-- @lists.each do |list|
-  .item-panel
-    .row
-      .col-sm-2
-      .col-sm-8
-        .panel-title= list.title
-        .panel-text
-          List by
-          = link_to list.user.name, user_path(list.user)
-      .col-sm-1
-        .panel-link= link_to 'View', list_path(list)
-      .col-sm-1
-        .panel-link= link_to 'Edit', edit_list_path(list)
+- if @lists
+  .wall
+  .wall
+    - @lists.each_with_index do |list, i|
+      - if i == 0
+        = render partial: 'lists/brick_large', locals: {list: list}
+      - else
+        = render partial: 'lists/brick_small', locals: {list: list}

@@ -1,5 +1,5 @@
 .page-header= "#{@item.title}, #{@item.media_type}"
-.item-panel
+.view-item
   .row
     .col-sm-2
       .panel-checkbox
@@ -8,15 +8,19 @@
         - else
           = fa_icon "square-o"
     .col-sm-8
+      - if @item.creator
+        .panel-text
+          - if @item.creator_link
+            = link_to "Created by #{@item.creator}", @item.creator_link
+          - else
+            = "Created by #{@item.creator}"
       .panel-title
         - if @item.link
-          = link_to @item.title, @item.link
-        - else
-          = @item.title
+          = link_to @item.link, @item.link
       .panel-text= @item.media_type
       .panel-text= @item.finished_on_to_s
-    .col-sm-1
-    .col-sm-1
+      .panel-text= link_to "Listed by #{@item.user.name}", user_path(@item.user)
+    .col-sm-2
       .panel-link= link_to 'Edit', edit_item_path(@item)
   .row
     .col-sm-12

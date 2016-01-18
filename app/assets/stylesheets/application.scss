@@ -126,9 +126,21 @@ header {
     background: #008E79;
   }
 }
-
+.found-item-panel {
+  height: 17em;
+  .panel-title {
+    font-size: 2em;
+    margin: 0.5em 0;
+  }
+  .panel-text {
+    font-size: 1.5em;
+  }
+  .panel-link {
+    font-size: 1.5em;
+  }
+}
 .panel-blurb {
-  font-size: 1.5em;
+  font-size: 2.5em;
   text-align: left;
   margin-left: 0.5em;
 }
@@ -142,6 +154,10 @@ header {
 .form-label {
   font-size: 1.5em;
   font-style: italic;
+}
+.checkbox-label {
+  font-size: 1.5em;
+  margin-left: 0.25em;
 }
 .form-text {
   font-size: 2em;
@@ -162,4 +178,26 @@ header {
   @extend .btn;
   @extend .btn-default;
   border-radius: 0;
+}
+.view-item{
+  padding: 0.5em;
+  margin: 1em 0;
+  background: #008E79;
+  color: $text-color;
+  text-align: center;
+  vertical-align: middle;
+  width: 100%;
+  a, a:hover {
+    color: white;
+  }
+  .panel-title {
+    font-size: 4em;
+    margin: 0.5em 0;
+  }
+  .panel-text {
+    font-size: 3em;
+  }
+  .panel-link {
+    font-size: 2.5em;
+  }
 }
