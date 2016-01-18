@@ -4,5 +4,4 @@ class UsersController < ApplicationController
     authorize @user
     @lists = @user.lists
   end
-
 end

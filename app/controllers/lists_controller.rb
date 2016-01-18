@@ -1,4 +1,5 @@
 class ListsController < ApplicationController
+
   def index
     if current_user.present?
       @lists = List.public_or_owned(current_user)
@@ -50,6 +51,20 @@ class ListsController < ApplicationController
       flash[:error] = "Hmm... something went wrong. Try again?"
       redirect_to edit_list_path(@list)
     end
+  end
+
+  def post_to_twitter
+    @list = List.find(params[:id])
+    authorize @list
+    client = Twitter::REST::Client.new do |config|
+      config.consumer_key        = ENV["TWITTER_API_KEY"]
+      config.consumer_secret     = ENV["TWITTER_API_SECRET"]
+      config.access_token        = session[:access_token]
+      config.access_token_secret = session[:access_token_secret]
+    end
+    # url auto-shortened by twitter to 23 chars, 14 characters for formatting
+    client.update("List on Jiv: #{@list.title[0...103]} #{url_for(@list)}")
+    redirect_to list_path(@list)
   end
 
   private

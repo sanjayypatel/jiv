@@ -1,5 +1,8 @@
 .page-header= "#{@list.title}"
 .page-subheader= "#{@list.user.name}'s List"
+- if policy(@list).post_to_twitter?
+  .page-text
+    = link_to "Share List on Twitter", tweet_list_path(@list)
 .page-text
   = @list.blurb
 -if @items

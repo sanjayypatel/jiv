@@ -24,4 +24,8 @@ class ListPolicy < ApplicationPolicy
     new?
   end
 
+  def post_to_twitter?
+    user.present? && !record.private
+  end
+
 end
