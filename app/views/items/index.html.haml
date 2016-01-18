@@ -1,5 +1,5 @@
 .page-header Items
--if @items
+-if !@items.nil?
   .wall
     - @items.each_with_index do |item, i|
       - if i == 0

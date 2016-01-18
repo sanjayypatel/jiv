@@ -1,7 +1,7 @@
 class ListPolicy < ApplicationPolicy
 
   def index?
-    true
+    return true
   end
 
   def show?
@@ -25,7 +25,7 @@ class ListPolicy < ApplicationPolicy
   end
 
   def post_to_twitter?
-    user.present? && !record.private
+    return user.present? && !record.private
   end
 
 end

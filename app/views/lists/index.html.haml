@@ -1,6 +1,5 @@
 .page-header Lists
-- if @lists
-  .wall
+- if !@lists.nil?
   .wall
     - @lists.each_with_index do |list, i|
       - if i == 0
