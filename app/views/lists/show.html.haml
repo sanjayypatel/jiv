@@ -47,7 +47,7 @@
     .col-md-6
       .page-header#search Search for Items
       = form_tag list_path(@list, :anchor => 'search'), method: 'get' do 
-        = label_tag(:search)
+        .form-label= label_tag(:search)
         .input-group.input-group-md
           %input.form-control{:placeholder => "Search items...", :type => "text", :name => "search"}
           %span.input-group-btn

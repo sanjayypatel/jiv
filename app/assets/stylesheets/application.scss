@@ -86,7 +86,7 @@ header {
   }
 }
 .item-panel-large{
-  height: 36em;
+  min-height: 36em;
   .panel-title {
     font-size: 3em;
     margin: 1em 0;
@@ -99,7 +99,7 @@ header {
   }
 }
 .item-panel-small {
-  height: 17em;
+  min-height: 17em;
   .panel-title {
     font-size: 2em;
     margin: 0.5em 0;
@@ -127,7 +127,7 @@ header {
   }
 }
 .found-item-panel {
-  height: 17em;
+  min-height: 17em;
   .panel-title {
     font-size: 2em;
     margin: 0.5em 0;
